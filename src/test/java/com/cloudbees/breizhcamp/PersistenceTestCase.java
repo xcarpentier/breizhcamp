@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
 @ContextConfiguration(locations = { "classpath:/testContext.xml", "classpath:/META-INF/applicationContext.xml"})
 @Transactional
 @TransactionConfiguration( defaultRollback = true )
-public class PersistenceTestCase {
+public abstract class PersistenceTestCase {
 
     @PersistenceContext 
     protected EntityManager em;
