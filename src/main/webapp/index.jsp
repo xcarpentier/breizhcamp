@@ -32,6 +32,8 @@
 %>
 </ul>
 
+<img src="Button-Built-on-CB-1.png" style="position: fixed;bottom:60px">
+<img src="Button-Powered-by-CB.png" style="position: fixed;bottom:2px">
 
 </body>
 </html>
