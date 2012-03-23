@@ -28,15 +28,15 @@ public class Talk {
 
     private Theme theme;
 
-    @ManyToMany
-    private Set<Speaker> speaker = new HashSet<Speaker>();
+    @ManyToMany(mappedBy = "talks")
+    private Set<Speaker> speakers = new HashSet<Speaker>();
 
     public long getId() {
         return id;
     }
 
-    public Set<Speaker> getSpeaker() {
-        return speaker;
+    public Set<Speaker> getSpeakers() {
+        return speakers;
     }
 
     public String getAbstract() {

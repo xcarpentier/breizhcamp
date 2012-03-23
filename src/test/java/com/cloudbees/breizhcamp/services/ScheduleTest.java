@@ -41,7 +41,7 @@ public class ScheduleTest extends PersistenceTestCase {
         talk.setEnd(new Date(123456789999L));
         talk.setTheme(Theme.DECOUVRIR);
 
-        talk.getSpeaker().add(speaker);
+        talk.getSpeakers().add(speaker);
         speaker.getTalks().add(talk);
 
         em.persist(speaker);
