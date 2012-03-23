@@ -18,6 +18,11 @@
       <developerConnection>scm:git:git@github.com:cloudbees/breizhcamp.git</developerConnection>
   </scm>
 
+  <properties>
+      <maven.compiler.source>1.6</maven.compiler.source>
+      <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
+
   <dependencies>
 
       <dependency>
@@ -68,6 +73,34 @@
           <groupId>commons-dbcp</groupId>
           <artifactId>commons-dbcp</artifactId>
           <version>1.4</version>
+          <scope>test</scope>
       </dependency>
   </dependencies>
+
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <version>8.1.0.RC5</version>
+              <configuration>
+                  <scanIntervalSeconds>10</scanIntervalSeconds>
+                  <contextXml>src/test/jetty-env.xml</contextXml>
+              </configuration>
+              <dependencies>
+                  <dependency>
+                      <groupId>com.h2database</groupId>
+                      <artifactId>h2</artifactId>
+                      <version>1.3.165</version>
+                  </dependency>
+                  <dependency>
+                      <groupId>commons-dbcp</groupId>
+                      <artifactId>commons-dbcp</artifactId>
+                      <version>1.4</version>
+                  </dependency>
+              </dependencies>
+          </plugin>
+      </plugins>
+  </build>
+
 </project>
