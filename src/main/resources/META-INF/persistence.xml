@@ -1,0 +1,12 @@
+<persistence>
+  <persistence-unit name="breizhcamp" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <non-jta-data-source>jdbc/breizhcamp</non-jta-data-source>
+    <properties>
+       <property name="hibernate.dialect"
+           value="org.hibernate.dialect.MySQL5Dialect"/>
+       <property name="hibernate.hbm2ddl.auto" value="create"/>
+       <property name="hibernate.bytecode.provider" value="javassist" />
+    </properties>
+  </persistence-unit>
+</persistence>

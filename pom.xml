@@ -5,17 +5,69 @@
   <artifactId>breizhcamp</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>breizhcamp Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <name>breizhcamp Webapp</name>
+  <url>http://www.breizhcamp.org</url>
+
+  <ciManagement>
+     <system>Jenkins (what else ?)</system>
+     <url>http://breizhcamp.ci.cloudbees.com</url>
+  </ciManagement>
+
+  <scm>
+      <url>https://github.com/cloudbees/breizhcamp</url>
+      <developerConnection>scm:git:git@github.com:cloudbees/breizhcamp.git</developerConnection>
+  </scm>
+
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>4.0.1.Final</version>
+      </dependency>
+      <dependency>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+          <version>3.9.0.GA</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>3.1.0.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>3.1.0.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.6.4</version>
+      </dependency>
+
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.9</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
+          <version>3.1.0.RELEASE</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.h2database</groupId>
+          <artifactId>h2</artifactId>
+          <version>1.3.165</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+          <version>1.4</version>
+      </dependency>
   </dependencies>
-  <build>
-    <finalName>breizhcamp</finalName>
-  </build>
 </project>

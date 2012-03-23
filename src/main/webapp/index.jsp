@@ -1,3 +1,7 @@
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="com.cloudbees.breizhcamp.Schedule" %>
+<%@ page import="com.cloudbees.breizhcamp.domain.Talk" %>
 <html>
 <head>
   <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
@@ -15,6 +19,19 @@
   <title>CloudBees au BriezhCamp !</title>
 </head>
 <body>
-<h2>CloudBees au BreizhCamp !</h2>
+<h2>Programme du BreizhCamp !</h2>
+
+<ul>
+<% ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(application);
+    Schedule schedule = ctx.getBean(Schedule.class);
+    for (Talk t : schedule.getSchedule("Amphi")) {
+%>
+    <li><%= t.getTitle() %></li>
+<%
+    }
+%>
+</ul>
+
+
 </body>
 </html>
